@@ -1,7 +1,7 @@
 
 
-function displayBooks(){
-    console.log('displayBooks')
+function displayBooks(books){
+    console.log('displayBooks', books)
 }
 
 function initEvents(){
@@ -9,6 +9,13 @@ function initEvents(){
 }
 
 function loadBooks(){
+    $.ajax('/books.json').done(function(books){
+        console.log('books');
+        window.globalBooks = books;
+        displayBooks(books);
+    });
+
+    
     console.log('loadBooks')
     displayBooks();
 }
