@@ -1,8 +1,49 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+body{
+    background-image: url(https://www.desktopbackground.org/p/2012/01/09/325465_books-backgrounds-twelve_1725x1125_h.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
 }
 
-a {
-  color: #00B7FF;
+
+#book-form{
+    width: 500px;
 }
+
+.form-group{
+    background-position: center;
+    position: relative;
+    left: 400px;
+    top: 10px;
+    bottom: 10px;
+} 
+.container{
+    text-align: center;
+    font-size: 80px;
+}
+#table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 15px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+  
+tr:nth-child(even){background-color: #f2f2f2}
+  
+th {
+    background-color: #0079a1;
+    color: white;
+}
+#search{
+    position: absolute;
+    left:5px;
+    top: 344px;
+    width: 220px;
+    height: 36px;
+    
+} 
