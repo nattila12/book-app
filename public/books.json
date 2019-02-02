@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Maitreyi",
+        "author": "Mircea Eliade",
+        "book-nr": "1"
+    },
+    {
+        "title": "Batranul Si Marea",
+        "author": "Ernest Hemingway",
+        "book-nr": "2"
+    },
+    {
+        "title": "Portretul Lui Dorian Gray",
+        "author" : "Oscar Wilde",
+        "book-nr": "3"
+    },
+    {
+        "title": "Don Quijote De La Mancha",
+        "author": "Miguel De Cervantes",
+        "book-nr": "4"
+    },
+    {
+        "title": "Ferma Animalelor",
+        "author": "George Orwell",
+        "book-nr": "5"
+    },
+    {
+        "title": "Lolita",
+        "author": "Vladimir Nabokov",
+        "book-nr": "6"
+    }
+]
