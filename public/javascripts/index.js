@@ -24,6 +24,7 @@ function displayBooks(books) {
 function initEvents() {
     console.log('initEvents')
     document.querySelector(".add-books").addEventListener('click', displayForm);
+    document.getElementById('search').addEventListener('input', doSearch);
 }
 
 function displayForm() {
@@ -41,8 +42,16 @@ function displayForm() {
     }
 }
 
-function search() {
-    console.log('search')
+function doSearch() {
+    var value = this.value.toLowerCase();
+
+    var filteredBooks = globalBooks.filter(function (book) {
+        return book.title.toLowerCase().includes(value) ||
+            book.author.toLowerCase().includes(value) ||
+            book.number.toLowerCase().includes(value);
+    });
+
+    displayBooks(filteredBooks);
 }
 
 loadBooks();
