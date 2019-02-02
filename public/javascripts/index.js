@@ -5,11 +5,8 @@ function loadBooks(){
         window.globalBooks = books;
         displayBooks(books);
     });
-
-    
     console.log('loadBooks')
 }
-
 
 function displayBooks(books){
     console.log('displayBooks', books)
@@ -21,15 +18,12 @@ function displayBooks(books){
             <td>${book.number}</td>
         </tr>`;
     });
+    document.querySelector('tbody').innerHTML= rows.join('');
 }
-
-
 
 function initEvents(){
     console.log('initEvents')
 }
-
-
 
 function search(){
     console.log('search')
