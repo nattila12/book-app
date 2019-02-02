@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 </head>
 
 <body>
-    <div style="padding: bottom 5px;">
-        <input type="text" id="search" name="search" placeholder="Search">
-    </div>
+    <input class="add-books" type="button" value="Add Books">
+
+
     <div class="container" mt-4>
         <h1 class="display-3 text-center">
             <i class="fas fa-book-open text-primary"></i>
@@ -21,7 +21,7 @@
 
         </h1>
     </div>
-    <form id="book-form">
+    <form id="book-form" style="display:block">
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" id="title" class="form-control">
@@ -40,24 +40,31 @@
         </div>
 
     </form>
-    <table class="table table-striped mt-5">
-        <thead id="table">
-            <tr>
-                <th style="width: 60px;"></th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Book Nr</th>
 
-            </tr>
-        </thead>
-        <tbody id="book-list">
+    <div style="padding-bottom: 5px; text-align: right">
+        <input type="text" id="search" name="search" placeholder="Search">
+    </div>
 
-        </tbody>
+    <div id="table-div">
+        <table class="table table-striped mt-5">
+            <thead id="table">
+                <tr>
+                    <th style="width: 60px;"></th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Book Nr</th>
 
-    </table>
+                </tr>
+            </thead>
+            <tbody id="book-list">
 
+            </tbody>
 
-    
+        </table>
+
+    </div>
+
+    <script src="/javascripts/index.js"></script>
 </body>
 
 </html>

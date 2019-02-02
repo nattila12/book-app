@@ -26,6 +26,7 @@ body{
     border-collapse: collapse;
     width: 100%;
     font-size: 15px;
+    
 }
 
 th, td {
@@ -40,10 +41,23 @@ th {
     color: white;
 }
 #search{
-    position: absolute;
-    left:5px;
-    top: 344px;
+    /* position: absolute;
+    right: 15px;
+    top: 220px; */
     width: 220px;
     height: 36px;
     
 } 
+#table-div{
+    padding: 15px;
+}
+.add-books{
+    width: 220px;
+    height: 36px;
+    background-color: #0079a1;
+    /* position: relative; */
+    top: 220px;
+    left: 15px;
+    color: white;
+    
+}
