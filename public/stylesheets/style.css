@@ -33,9 +33,14 @@ th, td {
     text-align: left;
     padding: 8px;
 }
-  
-tr:nth-child(even){background-color: #f2f2f2}
-  
+
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #ffffff;   
+}
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+ 
 th {
     background-color: #0079a1;
     color: white;
