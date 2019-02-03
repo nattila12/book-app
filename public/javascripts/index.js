@@ -15,7 +15,8 @@ function displayBooks(books) {
         return `<tr>
             <td>${book.title}</td>
             <td>${book.author}</td>
-            <td>${book.number}</td>
+            <td class="text-center">${book.number}</td>
+            <td class="text-center"><span class="delete">🗑</span></td>
         </tr>`;
     });
     document.querySelector('tbody').innerHTML = rows.join('');
@@ -25,21 +26,17 @@ function initEvents() {
     console.log('initEvents')
     document.querySelector(".add-books").addEventListener('click', displayForm);
     document.getElementById('search').addEventListener('input', doSearch);
+    document.getElementById('cancel').addEventListener('click', hideForm);
 }
 
 function displayForm() {
+    var x = document.getElementById("book-form-dialog");
+    x.showModal();
+}
 
-    var x = document.getElementById("book-form");
-
-    if (x.style.display === "none") {
-        x.style.display = "block";
-        document.querySelector('.add-books').value = 'Cancel';
-
-    } else {
-        x.style.display = "none";
-        document.querySelector('.add-books').value = 'Add Books';
-
-    }
+function hideForm(){
+    var x = document.getElementById("book-form-dialog");
+    x.close();
 }
 
 function doSearch() {
