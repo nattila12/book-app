@@ -17,7 +17,7 @@ A simple app using node & express for managing books
  - json
 
 ## Live preview
- Open [index.html] (https://github.com/nattila12/book-app/blob/master/public/book-app.html/index.html)
+ Open [book-app.html] (https://github.com/nattila12/book-app/blob/master/public/book-app.html/index.html)
 
 ## Setup 
 ```
