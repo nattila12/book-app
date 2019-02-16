@@ -2,29 +2,25 @@
 
 function loadBooks() {
     $.ajax('/books.json').done(function (books) {
-        console.log('books');
         window.globalBooks = books;
         displayBooks(books);
     });
-    console.log('loadBooks')
 }
 
 function displayBooks(books) {
-    console.log('displayBooks', books)
     var rows = books.map(function (book) {
-        console.log('transform book', book);
         return `<tr>
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td class="text-center">${book.number}</td>
             <td class="text-center"><span class="delete">🗑</span></td>
-        </tr>`;
+        </tr>`
     });
+    
     document.querySelector('tbody').innerHTML = rows.join('');
 }
 
 function initEvents() {
-    console.log('initEvents')
     document.querySelector(".add-books").addEventListener('click', displayForm);
     document.getElementById('search').addEventListener('input', doSearch);
     document.getElementById('cancel').addEventListener('click', hideForm);
@@ -52,5 +48,30 @@ function doSearch() {
     displayBooks(filteredBooks);
 }
 
+
+function saveBooks() {
+
+    var title = $('input[name=title]').val();
+    var author = $('input[name=author]').val();
+    var number = $('input[name=number]').val();
+    console.debug('saveBook...', title, author, number);
+
+    var actionUrl = books/create;
+
+     $.post(actionUrl, {
+        title, 
+        author,
+        number: number 
+    }).done(function (response) {
+        console.warn('done create book', response);
+        if (response.success) {
+            loadBooks();
+        }
+    })
+
+
+}
+
 loadBooks();
 initEvents();
+

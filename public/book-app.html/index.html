@@ -24,31 +24,31 @@
 
 
     <dialog id="book-form-dialog">
-            <form id="book-form">
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" id="title" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="author">Author</label>
-                        <input type="text" id="author" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="book-nr">Book Nr.</label>
-                        <input type="text" id="book-nr" class="form-control">
-                    </div>
+        <form id="book-form">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="book-nr">Book Nr.</label>
+                <input type="text" name="number" id="number" class="form-control">
+            </div>
 
-                    <menu>
-                        <input type="submit" id="save" value="Save" class="btn btn-primary">
-                        <input type="button" id="cancel" value="X" class="btn btn-primary">
-                    </menu>
-                </form>
+            <menu>
+                <input type="submit" id="save" onclick="saveBooks()"  value="Save" class="btn btn-primary">
+                <input type="button" id="cancel" value="X" class="btn btn-primary">
+            </menu>
+        </form>
     </dialog>
-    
+
 
 
     <div id="table-div">
-            
+
 
         <input type="text" id="search" name="search" placeholder="Search">
         <input class="add-books" type="button" value="+">
@@ -56,7 +56,7 @@
         <table class="table table-striped mt-2">
             <thead id="table">
                 <tr>
-                    
+
                     <th>Title</th>
                     <th>Author</th>
                     <th class="text-center">Number</th>
@@ -64,17 +64,16 @@
 
                 </tr>
             </thead>
-            <tbody id="book-list">
+            <tbody>
 
             </tbody>
 
         </table>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
-    </script>
+        </script>
     <script src="/javascripts/index.js"></script>
 </body>
 
