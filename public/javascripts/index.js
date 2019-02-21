@@ -56,9 +56,9 @@ function saveBooks() {
     var number = $('input[name=number]').val();
     console.debug('saveBook...', title, author, number);
 
-    var actionUrl = books/create;
+    var actionUrl = '/books/create';
 
-     $.post(actionUrl, {
+    $.post(actionUrl, {
         title, 
         author,
         number: number 
@@ -68,8 +68,6 @@ function saveBooks() {
             loadBooks();
         }
     })
-
-
 }
 
 loadBooks();

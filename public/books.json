@@ -1,32 +1,42 @@
 [
-    {
-        "title": "Maitreyi",
-        "author": "Mircea Eliade",
-        "number": "1"
-    },
-    {
-        "title": "Batranul Si Marea",
-        "author": "Ernest Hemingway",
-        "number": "2"
-    },
-    {
-        "title": "Portretul Lui Dorian Gray",
-        "author" : "Oscar Wilde",
-        "number": "3"
-    },
-    {
-        "title": "Don Quijote De La Mancha",
-        "author": "Miguel De Cervantes",
-        "number": "4"
-    },
-    {
-        "title": "Ferma Animalelor",
-        "author": "George Orwell",
-        "number": "5"
-    },
-    {
-        "title": "Lolita",
-        "author": "Vladimir Nabokov",
-        "number": "6"
-    }
+  {
+    "title": "Maitreyi",
+    "author": "Mircea Eliade",
+    "number": "1"
+  },
+  {
+    "title": "Batranul Si Marea",
+    "author": "Ernest Hemingway",
+    "number": "2"
+  },
+  {
+    "title": "Portretul Lui Dorian Gray",
+    "author": "Oscar Wilde",
+    "number": "3"
+  },
+  {
+    "title": "Don Quijote De La Mancha",
+    "author": "Miguel De Cervantes",
+    "number": "4"
+  },
+  {
+    "title": "Ferma Animalelor",
+    "author": "George Orwell",
+    "number": "5"
+  },
+  {
+    "title": "Lolita",
+    "author": "Vladimir Nabokov",
+    "number": "6"
+  },
+  {
+    "title": "cdsac",
+    "author": "ds",
+    "number": "ds"
+  },
+  {
+    "title": "dcas",
+    "author": "ds",
+    "number": "3"
+  }
 ]
