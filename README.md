@@ -17,7 +17,7 @@ A simple app using node & express for managing books
  - json
 
 ## Live preview
- Open [index.html](https://nattila12.github.io/book-app/public/book-app.html/index.html)
+ -
 
 ## Setup 
 ```
@@ -32,7 +32,7 @@ npm run devstart
 
 open http://localhost:3000/
 
-##create database and preview
+##Create database and preview
 CREATE DATABASE book_library;
 USE book_library;
 CREATE TABLE books (id INT AUTO_INCREMENT, title TEXT, author TEXT, PRIMARY KEY (ID));

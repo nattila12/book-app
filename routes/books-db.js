@@ -31,12 +31,17 @@ router.get('/', function (req, res, next) {
 // /books/create 
 
 router.post('/create', function (req, res, next) {
-  var title = req.body.title;
-  var author = req.body.author;
-  var number = req.body.number;
-  
-  //TODO - create sql query and run query 
-  res.json({success: true});
+  pool.getConnection(function(err, connection){
+    if(err) throw err;
+    var title = req.body.title;
+    var author = req.body.author;
+    const sql = `INSERT INTO books (id, title, author) VALUES (NULL, '${title}', '${author}')`;
+    connection.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log(result);
+      res.json({ success: true });
+    })
+  });
 });
 
 // /books/delete

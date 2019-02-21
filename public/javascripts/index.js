@@ -80,7 +80,9 @@ function saveBooks() {
     }).done(function (response) {
         console.warn('done create book', response);
         if (response.success) {
+            hideForm();
             loadBooks();
+            
         }
     })
 }
