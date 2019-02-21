@@ -32,4 +32,10 @@ npm run devstart
 
 open http://localhost:3000/
 
+##create database and preview
+CREATE DATABASE book_library;
+USE book_library;
+CREATE TABLE books (id INT AUTO_INCREMENT, title TEXT, author TEXT, PRIMARY KEY (ID));
+INSERT INTO books (title, author) VALUES("Maitrey", "Mircea Eliade");
+
 

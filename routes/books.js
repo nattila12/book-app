@@ -4,7 +4,9 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.send('index' ,{ title: 'Express'});
+  var content = fs.readFileSync('public/books.json');
+  var books = JSON.parse(content);
+  res.json(books);
 });
 
 

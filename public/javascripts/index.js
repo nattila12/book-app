@@ -1,7 +1,7 @@
 
 
 function loadBooks() {
-    $.ajax('/books.json').done(function (books) {
+    $.ajax('/books').done(function (books) {
         window.globalBooks = books;
         displayBooks(books);
     });
