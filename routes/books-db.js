@@ -43,9 +43,18 @@ router.post('/create', function (req, res, next) {
 router.post('/delete', function(req, res, next) {
   var id = req.body.id;
 
+  pool.getConnection(function (err, connection) {
+    if (err) throw err;
+    const sql = `DELETE FROM books WHERE id=${id}`;
+    connection.query(sql, function (err, results) {
+      if (err) throw err;
+      console.log(results);
+      res.json({success: true});
+    })
+  })
+ 
   //TODO - create sql query and run query 
-  res.json({success: true});
+  
 });
-
 module.exports = router;
 

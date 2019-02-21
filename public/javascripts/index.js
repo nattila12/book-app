@@ -20,24 +20,27 @@ function displayBooks(books) {
     document.querySelector('tbody').innerHTML = rows.join('');
 }
 
+function deleteBook(id) {
+    $.post('/books/delete', {
+        id: id
+    }).done(function (response) {
+        if (response.success) {
+            console.warn('deleted book', response);
+            loadBooks();
+        }
+    })
+}
+
 function initEvents() {
     document.querySelector(".add-books").addEventListener('click', displayForm);
     document.getElementById('search').addEventListener('input', doSearch);
     document.getElementById('cancel').addEventListener('click', hideForm);
 
-    $("tbody").delegate( ".delete", "click", function(e) {
+    $("tbody").delegate(".delete", "click", function (e) {
         var id = this.getAttribute('data-id')
         console.log('delete by id: ', id);
 
-        $.post('/books/delete', {
-            id: id
-        }).done(function (response) {
-            if (response.success) {
-                console.warn('deleted book', response);
-                loadBooks();
-            }
-        })
-        
+        deleteBook(id);
     })
 }
 
