@@ -29,6 +29,25 @@ router.post('/create', function (req, res, next) {
   res.json({success: true});
 });
 
+// /books/delete
+router.post('/delete', function(req, res, next) {
+  var id = req.body.id;
+
+  var content = fs.readFileSync('public/books.json');
+  var books = JSON.parse(content);
+
+  var remainingBooks = books.filter(function(book){
+    console.log('book.id', book.id);
+    console.log('id', id);
+    return book.id != id;
+  });
+
+  content = JSON.stringify(remainingBooks, null, 2);
+  fs.writeFileSync('public/books.json', content);
+  
+  res.json({success: true});
+});
+
 
 
 module.exports = router;

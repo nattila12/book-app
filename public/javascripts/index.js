@@ -12,8 +12,8 @@ function displayBooks(books) {
         return `<tr>
             <td>${book.title}</td>
             <td>${book.author}</td>
-            <td class="text-center">${book.number}</td>
-            <td class="text-center"><span class="delete">🗑</span></td>
+            <td class="text-center">${book.id}</td>
+            <td class="text-center"><span class="delete" data-id="${book.id}">🗑</span></td>
         </tr>`
     });
     
@@ -24,6 +24,21 @@ function initEvents() {
     document.querySelector(".add-books").addEventListener('click', displayForm);
     document.getElementById('search').addEventListener('input', doSearch);
     document.getElementById('cancel').addEventListener('click', hideForm);
+
+    $("tbody").delegate( ".delete", "click", function(e) {
+        var id = this.getAttribute('data-id')
+        console.log('delete by id: ', id);
+
+        $.post('/books/delete', {
+            id: id
+        }).done(function (response) {
+            if (response.success) {
+                console.warn('deleted book', response);
+                loadBooks();
+            }
+        })
+        
+    })
 }
 
 function displayForm() {
