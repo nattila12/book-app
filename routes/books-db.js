@@ -37,7 +37,8 @@ router.post('/create', function (req, res, next) {
     var author = req.body.author;
     const sql = `INSERT INTO books (id, title, author) VALUES (NULL, '${title}', '${author}')`;
     connection.query(sql, function (err, result) {
-      if (err) throw err;
+      connection.release();
+       if (err) throw err;
       console.log(result);
       res.json({ success: true });
     })

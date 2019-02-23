@@ -13,6 +13,7 @@ function displayBooks(books) {
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td class="text-center">${book.id}</td>
+            <td class="text-center"><span class="edit" >&#9998;</span></td>
             <td class="text-center"><span class="delete" data-id="${book.id}">🗑</span></td>
         </tr>`
     });
@@ -60,7 +61,7 @@ function doSearch() {
     var filteredBooks = globalBooks.filter(function (book) {
         return book.title.toLowerCase().includes(value) ||
             book.author.toLowerCase().includes(value) ||
-            book.number.toLowerCase().includes(value);
+            book.id.toLowerCase().includes(value);
     });
 
     displayBooks(filteredBooks);
