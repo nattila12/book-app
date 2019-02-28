@@ -1,4 +1,5 @@
-
+ 
+var idToEdit = '';
 
 function loadBooks() {
     $.ajax('/books').done(function (books) {
@@ -13,7 +14,7 @@ function displayBooks(books) {
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td class="text-center">${book.id}</td>
-            <td class="text-center"><span class="edit" >&#9998;</span></td>
+            <td class="text-center"><span class="edit" data-id="${book.id}" >&#9998;</span></td>
             <td class="text-center"><span class="delete" data-id="${book.id}">🗑</span></td>
         </tr>`
     });
@@ -32,6 +33,8 @@ function deleteBook(id) {
     })
 }
 
+// 
+
 function initEvents() {
     document.querySelector(".add-books").addEventListener('click', displayForm);
     document.getElementById('search').addEventListener('input', doSearch);
@@ -43,6 +46,21 @@ function initEvents() {
 
         deleteBook(id);
     })
+
+    // $("tbody").delegate( ".edit", "click", function() {
+    //     idToEdit = this.getAttribute('data-id');
+
+    //     var book = globalBooks.find(function(book){
+    //         return book.id == idToEdit;
+    //     });
+    //     console.log('edit', idToEdit, book);
+        
+    //     displayForm();
+    //     document.querySelector('input[name=title]').value = book.title;
+    //     $('input[name=author]').val(book.author);
+    //     $('input[name=id]').val(book.id);
+        
+    // });
 }
 
 function displayForm() {
@@ -68,27 +86,29 @@ function doSearch() {
 }
 
 
+
 function saveBooks() {
 
     var title = $('input[name=title]').val();
     var author = $('input[name=author]').val();
     var number = $('input[name=number]').val();
     console.debug('saveBook...', title, author, number);
-
-    var actionUrl = '/books/create';
+    
+    var actionUrl =  idToEdit ? 'books/update?id=' + idToEdit : 'books/create';
 
     $.post(actionUrl, {
         title, 
         author,
-        number: number 
+        number: number,
     }).done(function (response) {
         console.warn('done create book', response);
+        idToEdit = '';
         if (response.success) {
             hideForm();
             loadBooks();
             
         }
-    })
+    });
 }
 
 loadBooks();

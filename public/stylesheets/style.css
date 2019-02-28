@@ -63,6 +63,9 @@ th {
 .delete{
     cursor: pointer;
 }
+.edit{
+    cursor: pointer;
+}
 
 dialog {
     width: 70%;
