@@ -33,8 +33,6 @@ function deleteBook(id) {
     })
 }
 
-// 
-
 function initEvents() {
     document.querySelector(".add-books").addEventListener('click', displayForm);
     document.getElementById('search').addEventListener('input', doSearch);
@@ -58,8 +56,7 @@ function initEvents() {
         displayForm();
         document.querySelector('input[name=title]').value = book.title;
         $('input[name=author]').val(book.author);
-        $('input[name=id]').val(book.id);
-        
+        $('input[name=id]').val(book.id);    
     });
 }
 
@@ -74,7 +71,9 @@ function displayForm() {
 
 function hideForm(){
     var x = document.getElementById("book-form-dialog");
-    x.close();
+    x.close()
+    document.getElementById("book-form").reset();
+    
 }
 
 function doSearch() {
@@ -88,6 +87,19 @@ function doSearch() {
 
     displayBooks(filteredBooks);
 }
+
+// function clearForm(){
+// var originalContent;
+// $("#book-form-dialog").dialog({
+//    //Your Code, append following code
+//     open : function(event, ui) { 
+//       originalContent = $("#book-form-dialog").html();
+//    },
+//     close : function(event, ui) {
+//       $("#book-form-dialog").html(originalContent);
+//    }
+// });
+// }
 
 
 
@@ -116,6 +128,7 @@ function saveBooks() {
             window.editMode = false;
         }
     });
+    
 }
 
 loadBooks();
