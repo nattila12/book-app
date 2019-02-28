@@ -63,22 +63,22 @@ router.post('/delete', function(req, res, next) {
   
 });
 
-// router.post('/update', function(req, res, next) {
-//   var id = req.body.id;
-//   var title = req.body.title;
-//   var author = req.body.author;
+router.post('/update', function(req, res, next) {
+  var id = req.body.id;
+  var title = req.body.title;
+  var author = req.body.author;
   
 
-//   pool.getConnection(function(err, connection) {
-//     if(err) throw err;
-//     const sql = `UPDATE books SET title='${title}', author='${author}', ' WHERE id=${id}`;
-//     connection.query(sql, function(err, results) {
-//       if(err) throw err;
-//       console.log(results);
-//       res.json({success: true});
-//     })
-//   })
-// });
+  pool.getConnection(function(err, connection) {
+    if(err) throw err;
+    const sql = `UPDATE books SET title='${title}', author='${author}', ' WHERE id=${id}`;
+    connection.query(sql, function(err, results) {
+      if(err) throw err;
+      console.log(results);
+      res.json({success: true});
+    })
+  })
+});
 
 
 module.exports = router;

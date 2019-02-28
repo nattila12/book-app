@@ -47,25 +47,29 @@ function initEvents() {
         deleteBook(id);
     })
 
-    // $("tbody").delegate( ".edit", "click", function() {
-    //     idToEdit = this.getAttribute('data-id');
+    $("tbody").delegate( ".edit", "click", function() {
+        idToEdit = this.getAttribute('data-id');
 
-    //     var book = globalBooks.find(function(book){
-    //         return book.id == idToEdit;
-    //     });
-    //     console.log('edit', idToEdit, book);
+        var book = globalBooks.find(function(book){
+            return book.id == idToEdit;
+        });
+        console.log('edit', idToEdit, book);
         
-    //     displayForm();
-    //     document.querySelector('input[name=title]').value = book.title;
-    //     $('input[name=author]').val(book.author);
-    //     $('input[name=id]').val(book.id);
+        displayForm();
+        document.querySelector('input[name=title]').value = book.title;
+        $('input[name=author]').val(book.author);
+        $('input[name=id]').val(book.id);
         
-    // });
+    });
 }
 
 function displayForm() {
     var x = document.getElementById("book-form-dialog");
+
     x.showModal();
+
+    if (window.editMode) $('#book-form #id').attr('readonly', true);
+    else $('#book-form #id').attr('readonly', false);
 }
 
 function hideForm(){
@@ -91,7 +95,9 @@ function saveBooks() {
 
     var title = $('input[name=title]').val();
     var author = $('input[name=author]').val();
-    var number = $('input[name=number]').val();
+    var number = $('input[name=id]').val();
+
+    console.debug('edit mode? ' + window.editMode);
     console.debug('saveBook...', title, author, number);
     
     var actionUrl =  idToEdit ? 'books/update?id=' + idToEdit : 'books/create';
@@ -107,6 +113,7 @@ function saveBooks() {
             hideForm();
             loadBooks();
             
+            window.editMode = false;
         }
     });
 }

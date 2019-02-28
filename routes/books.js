@@ -17,16 +17,18 @@ router.post('/create', function (req, res, next) {
   var author = req.body.author;
   var number = req.body.number;
   
-  var content = fs.readFileSync('public/books.json');
-  var books = JSON.parse(content);
-  books.push({
-    title,
-    author,
-    number
-  });
+  createBook(number, title, author);
 
-  content = JSON.stringify(books, null, 2);
-  fs.writeFileSync('public/books.json', content);
+  res.json({success: true});
+});
+
+router.post('/edit', function (req, res, next) {
+  var title = req.body.title;
+  var author = req.body.author;
+  var number = req.body.number;
+
+  deleteBook(number);
+  createBook(number, title, author);
 
   res.json({success: true});
 });
@@ -35,6 +37,25 @@ router.post('/create', function (req, res, next) {
 router.post('/delete', function(req, res, next) {
   var id = req.body.id;
 
+  deleteBook(id);
+
+  res.json({success: true});
+});
+
+function createBook(number, title, author) {
+  var content = fs.readFileSync('public/books.json');
+  var books = JSON.parse(content);
+  books.push({
+    title,
+    author,
+    id: number
+  });
+
+  content = JSON.stringify(books, null, 2);
+  fs.writeFileSync('public/books.json', content);
+}
+
+function deleteBook(id) {
   var content = fs.readFileSync('public/books.json');
   var books = JSON.parse(content);
 
@@ -48,7 +69,7 @@ router.post('/delete', function(req, res, next) {
   fs.writeFileSync('public/books.json', content);
   
   res.json({success: true});
-});
+};
 
 // router.post('/update', function (req, res, next) {
 //   var title = req.body.title;
