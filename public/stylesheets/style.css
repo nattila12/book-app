@@ -27,7 +27,6 @@ body{
 
 th, td {
     text-align: left;
-    padding: 8px;
 }
 
 table.table-striped tbody tr:nth-of-type(odd) {

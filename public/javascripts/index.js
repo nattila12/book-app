@@ -11,9 +11,9 @@ function loadBooks() {
 function displayBooks(books) {
     var rows = books.map(function (book) {
         return `<tr>
+            <td>${book.id}</td>
             <td>${book.title}</td>
             <td>${book.author}</td>
-            <td class="text-center">${book.id}</td>
             <td class="text-center"><span class="edit" data-id="${book.id}" >&#9998;</span></td>
             <td class="text-center"><span class="delete" data-id="${book.id}">🗑</span></td>
         </tr>`
@@ -87,21 +87,6 @@ function doSearch() {
 
     displayBooks(filteredBooks);
 }
-
-// function clearForm(){
-// var originalContent;
-// $("#book-form-dialog").dialog({
-//    //Your Code, append following code
-//     open : function(event, ui) { 
-//       originalContent = $("#book-form-dialog").html();
-//    },
-//     close : function(event, ui) {
-//       $("#book-form-dialog").html(originalContent);
-//    }
-// });
-// }
-
-
 
 function saveBooks() {
 
