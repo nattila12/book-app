@@ -27,7 +27,14 @@ npm install
 ```
 ## Running app
 ```
+mysql.server start
+
+```
+mysql -u root -p
+
+```
 npm run devstart
+
 ```
 
 open http://localhost:3000/

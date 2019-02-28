@@ -71,7 +71,7 @@ router.post('/update', function(req, res, next) {
 
   pool.getConnection(function(err, connection) {
     if(err) throw err;
-    const sql = `UPDATE books SET title='${title}', author='${author}', ' WHERE id=${id}`;
+    const sql = `UPDATE books SET title='${title}', author='${author}' WHERE id=${id};`;
     connection.query(sql, function(err, results) {
       if(err) throw err;
       console.log(results);

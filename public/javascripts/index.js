@@ -82,8 +82,8 @@ function doSearch() {
 
     var filteredBooks = globalBooks.filter(function (book) {
         return book.title.toLowerCase().includes(value) ||
-            book.author.toLowerCase().includes(value) ||
-            book.id.toLowerCase().includes(value);
+            book.author.toLowerCase().includes(value) ;
+            // book.id.toLowerCase().includes(value);
     });
 
     displayBooks(filteredBooks);
@@ -100,12 +100,12 @@ function saveBooks() {
     console.debug('edit mode? ' + window.editMode);
     console.debug('saveBook...', title, author, number);
     
-    var actionUrl =  idToEdit ? 'books/update?id=' + idToEdit : 'books/create';
+    var actionUrl =  idToEdit ? 'books/update?' : 'books/create';
 
     $.post(actionUrl, {
+        id: idToEdit,
         title, 
         author,
-        number: number,
     }).done(function (response) {
         console.warn('done create book', response);
         idToEdit = '';
