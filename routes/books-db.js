@@ -35,7 +35,8 @@ router.post('/create', function (req, res, next) {
     if(err) throw err;
     var title = req.body.title;
     var author = req.body.author;
-    const sql = `INSERT INTO books (id, title, author) VALUES (NULL, '${title}', '${author}')`;
+    var details = req.body.author;
+    const sql = `INSERT INTO books (id, title, author,details) VALUES (NULL, '${title}', '${author}','${details}')`;
     connection.query(sql, function (err, result) {
       connection.release();
        if (err) throw err;
@@ -67,11 +68,12 @@ router.post('/update', function(req, res, next) {
   var id = req.body.id;
   var title = req.body.title;
   var author = req.body.author;
+  var details = req.body.details;
   
 
   pool.getConnection(function(err, connection) {
     if(err) throw err;
-    const sql = `UPDATE books SET title='${title}', author='${author}' WHERE id=${id};`;
+    const sql = `UPDATE books SET title='${title}', author='${author}', details='${details}' WHERE id=${id};`;
     connection.query(sql, function(err, results) {
       if(err) throw err;
       console.log(results);

@@ -14,6 +14,7 @@ function displayBooks(books) {
             <td>${book.id}</td>
             <td>${book.title}</td>
             <td>${book.author}</td>
+            <td style="display:none">${book.details}</td>
             <td class="text-center"><span class="edit" data-id="${book.id}" >&#9998;</span></td>
             <td class="text-center"><span class="delete" data-id="${book.id}">🗑</span></td>
         </tr>`
@@ -56,6 +57,7 @@ function initEvents() {
         displayForm();
         document.querySelector('input[name=title]').value = book.title;
         $('input[name=author]').val(book.author);
+        $('input[name=details]').val(book.details);
         $('input[name=id]').val(book.id);    
     });
 }
@@ -81,7 +83,8 @@ function doSearch() {
 
     var filteredBooks = globalBooks.filter(function (book) {
         return book.title.toLowerCase().includes(value) ||
-            book.author.toLowerCase().includes(value) ;
+            book.author.toLowerCase().includes(value) ||
+            book.details.toLowerCase().includes(value);
             // book.id.toLowerCase().includes(value);
     });
 
@@ -93,6 +96,7 @@ function saveBooks() {
     var title = $('input[name=title]').val();
     var author = $('input[name=author]').val();
     var number = $('input[name=id]').val();
+    var details = $('input[name=details]').val();
 
     console.debug('edit mode? ' + window.editMode);
     console.debug('saveBook...', title, author, number);
@@ -103,6 +107,7 @@ function saveBooks() {
         id: idToEdit,
         title, 
         author,
+        details
     }).done(function (response) {
         console.warn('done create book', response);
         idToEdit = '';
