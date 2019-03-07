@@ -17,7 +17,7 @@ A simple app using node & express for managing books
  - json
 
 ## Live preview
- -
+ 
 
 ## Setup 
 ```
@@ -37,7 +37,7 @@ npm run devstart
 
 ```
 
-open http://localhost:3000/
+open http://localhost:3000
 
 ##Create database and preview
 CREATE DATABASE book_library;
