@@ -45,4 +45,7 @@ USE book_library;
 CREATE TABLE books (id INT AUTO_INCREMENT, title TEXT, author TEXT, PRIMARY KEY (ID));
 INSERT INTO books (title, author) VALUES("Maitrey", "Mircea Eliade");
 
-
+##Insert extra column into db
+USE databbase_name;
+ALTER TABLE table_name;
+ADD column_name datatype;
