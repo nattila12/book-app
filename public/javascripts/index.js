@@ -1,8 +1,20 @@
  
 var idToEdit = '';
 
+var API_URL = {
+    CREATE: 'books/create',
+    READ: 'books',
+    UPDATE: 'books/update',
+    DELETE: 'books/delete'
+}
+
+//if we are on demo site
+if(location.host === "nattila12.github.io"){
+    API_URL.READ = '/books.json'
+}
+
 function loadBooks() {
-    $.ajax('/books').done(function (books) {
+    $.ajax(API_URL.READ).done(function (books) {
         window.globalBooks = books;
         displayBooks(books);
     });
@@ -101,7 +113,7 @@ function saveBooks() {
     console.debug('edit mode? ' + window.editMode);
     console.debug('saveBook...', title, author, number);
     
-    var actionUrl =  idToEdit ? 'books/update?' : 'books/create';
+    var actionUrl =  idToEdit ? API_URL.UPDATE + '?id=' : API_URL.CREATE;
 
     $.post(actionUrl, {
         id: idToEdit,
