@@ -3,6 +3,9 @@
 
 A simple app using node & express for managing books
 
+# Preview
+Open [book app](https://nattila12.github.io/book-app/public/index.html)
+
 ## Content
 - CRUD operation
     - **C**reate new book
