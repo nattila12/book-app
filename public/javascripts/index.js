@@ -10,7 +10,7 @@ var API_URL = {
 
 //if we are on demo site
 if(location.host === "nattila12.github.io"){
-    API_URL.READ = '/books.json'
+    API_URL.READ = 'books.json'
 }
 
 function loadBooks() {
