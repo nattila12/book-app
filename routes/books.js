@@ -15,20 +15,22 @@ router.get('/', function (req, res, next) {
 router.post('/create', function (req, res, next) {
   var title = req.body.title;
   var author = req.body.author;
-  var number = req.body.number;
+  var details = req.body.details;
+  var id = new Date().getTime();
   
-  createBook(number, title, author);
+  createBook(id, title, author, details);
 
   res.json({success: true});
 });
 
-router.post('/edit', function (req, res, next) {
+router.post('/update', function (req, res, next) {
   var title = req.body.title;
   var author = req.body.author;
-  var number = req.body.number;
+  var id = req.body.id;
+  var details = req.body.details;
 
-  deleteBook(number);
-  createBook(number, title, author);
+  deleteBook(id);
+  createBook(id, title, author, details);
 
   res.json({success: true});
 });
@@ -42,13 +44,14 @@ router.post('/delete', function(req, res, next) {
   res.json({success: true});
 });
 
-function createBook(number, title, author) {
+function createBook(id, title, author, details) {
   var content = fs.readFileSync('public/books.json');
   var books = JSON.parse(content);
   books.push({
     title,
     author,
-    id: number
+    id,
+    details
   });
 
   content = JSON.stringify(books, null, 2);
@@ -67,32 +70,7 @@ function deleteBook(id) {
 
   content = JSON.stringify(remainingBooks, null, 2);
   fs.writeFileSync('public/books.json', content);
-  
-  res.json({success: true});
 };
-
-// router.post('/update', function (req, res, next) {
-//   var title = req.body.title;
-//   var author = req.body.author;
-//   var oldId = req.body.id;
-  
-//   var content = fs.readFileSync('public/books.json');
-//   var books = JSON.parse(content);
-
-//   var book = books.find(function(book){
-//     return book.id == oldId;
-//   });
-
-//   book.title = title;
-//   book.author = author;
-//   book.id = id;
-  
-//   content = JSON.stringify(books, null, 2);
-//   fs.writeFileSync('public/books.json', content);
-
-//   res.json({success: true});
-  
-// });
 
 
 module.exports = router;

@@ -67,7 +67,7 @@ function initEvents() {
         console.log('edit', idToEdit, book);
         
         displayForm();
-        document.querySelector('input[name=title]').value = book.title;
+        $('input[name=title]').val(book.title);
         $('input[name=author]').val(book.author);
         $('input[name=details]').val(book.details);
         $('input[name=id]').val(book.id);    
@@ -95,9 +95,8 @@ function doSearch() {
 
     var filteredBooks = globalBooks.filter(function (book) {
         return book.title.toLowerCase().includes(value) ||
-            book.author.toLowerCase().includes(value) ||
+            book.author.toLowerCase().includes(value)||
             book.details.toLowerCase().includes(value);
-            // book.id.toLowerCase().includes(value);
     });
 
     displayBooks(filteredBooks);
@@ -111,9 +110,9 @@ function saveBooks() {
     var details = $('input[name=details]').val();
 
     console.debug('edit mode? ' + window.editMode);
-    console.debug('saveBook...', title, author, number);
+    console.debug('saveBook...', title, author, number, details);
     
-    var actionUrl =  idToEdit ? API_URL.UPDATE + '?id=' : API_URL.CREATE;
+    var actionUrl =  idToEdit ? API_URL.UPDATE : API_URL.CREATE;
 
     $.post(actionUrl, {
         id: idToEdit,

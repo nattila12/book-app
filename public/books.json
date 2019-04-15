@@ -1,27 +1,8 @@
 [
   {
-    "title": "Batranul Si Marea",
-    "author": "Ernest Hemingway",
-    "id": "2"
-  },
-  {
-    "title": "Portretul Lui Dorian Gray",
-    "author": "Oscar Wilde",
-    "id": "3"
-  },
-  {
-    "title": "Don Quijote De La Mancha",
-    "author": "Miguel De Cervantes",
-    "id": "4"
-  },
-  {
-    "title": "Ferma Animalelor",
-    "author": "George Orwell",
-    "id": "5"
-  },
-  {
-    "title": "Lolita",
-    "author": "Vladimir Nabokov",
-    "id": "6"
+    "title": "title 2",
+    "author": "author 2",
+    "id": "1555348593026",
+    "details": "details"
   }
 ]
