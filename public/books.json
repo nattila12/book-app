@@ -1,8 +1,182 @@
 [
   {
-    "title": "title 2",
-    "author": "author 2",
-    "id": "1555348593026",
-    "details": "details"
+    "id": 1,
+    "title": "Maitrey",
+    "author": "Mircea Eliade",
+    "details": "Imprumutat la Alina  in data de 09.01.29"
+  },
+  {
+    "id": 4,
+    "title": "O MIE NOUĂ SUTE OPTZECI ȘI PATRU ",
+    "author": "George Orwell",
+    "details": "Imprumutat la George in data de 18.01.19"
+  },
+  {
+    "id": 5,
+    "title": "PORTRETUL LUI DORIAN GRAY ",
+    "author": "Oscar Wilde",
+    "details": " Imprumutat la Rares  in data de 05.10.19 "
+  },
+  {
+    "id": 10,
+    "title": "BĂTRÂNUL ȘI MAREA",
+    "author": "Ernest Hemingway",
+    "details": "Ernest Hemingway"
+  },
+  {
+    "id": 11,
+    "title": "DON QUIJOTE DE LA MANCHA",
+    "author": "Miguel de Cervantes",
+    "details": "Miguel de Cervantes"
+  },
+  {
+    "id": 12,
+    "title": "FERMA ANIMALELOR",
+    "author": "George Orwell ",
+    "details": "George Orwell "
+  },
+  {
+    "id": 13,
+    "title": "DE CE IUBIM FEMEILE?",
+    "author": "Mircea Cărtărescu",
+    "details": "Mircea Cărtărescu"
+  },
+  {
+    "id": 14,
+    "title": "LOLITA",
+    "author": "Vladimir Nabokov",
+    "details": "Vladimir Nabokov"
+  },
+  {
+    "id": 15,
+    "title": "FEMEIA LA 30 DE ANI",
+    "author": "Honore de Balzac",
+    "details": "Honore de Balzac"
+  },
+  {
+    "id": 16,
+    "title": "DRAGOSTEA ÎN VREMEA HOLEREI",
+    "author": "Gabriel Garcia Marquez",
+    "details": "Gabriel Garcia Marquez"
+  },
+  {
+    "id": 17,
+    "title": "MICUL PRINȚ ",
+    "author": "Antoine de Saint-Exupery",
+    "details": "Antoine de Saint-Exupery"
+  },
+  {
+    "id": 18,
+    "title": "PUTEREA PREZENTULUI",
+    "author": "Eckhart Tolle",
+    "details": "Eckhart Tolle"
+  },
+  {
+    "id": 19,
+    "title": "INTELIGENȚA EMOȚIONALĂ",
+    "author": "Daniel Goleman",
+    "details": "Daniel Goleman"
+  },
+  {
+    "id": 20,
+    "title": "IDIOTUL",
+    "author": "F.M. Dostoievski",
+    "details": "F.M. Dostoievski"
+  },
+  {
+    "id": 21,
+    "title": "PE CULMILE DISPERĂRII",
+    "author": "Emil Cioran",
+    "details": "Emil Cioran"
+  },
+  {
+    "id": 22,
+    "title": "LA PARADISUL FEMEILOR",
+    "author": " Emile Zola",
+    "details": " Emile Zola"
+  },
+  {
+    "id": 23,
+    "title": "TROPICUL CAPRICORNULUI ",
+    "author": "Henry Miller",
+    "details": "Henry Miller"
+  },
+  {
+    "id": 24,
+    "title": "STRĂINUL",
+    "author": "Albert Camus",
+    "details": "Albert Camus"
+  },
+  {
+    "id": 25,
+    "title": "RĂTĂCIRILE FETEI NESĂBUITE",
+    "author": "Mario Vargas Llosa",
+    "details": "Mario Vargas Llosa"
+  },
+  {
+    "id": 26,
+    "title": "PARFUMUL",
+    "author": "Patrick Suskind",
+    "details": "Patrick Suskind"
+  },
+  {
+    "id": 27,
+    "title": "ALCHIMISTUL",
+    "author": "Paulo Coelho",
+    "details": "Paulo Coelho"
+  },
+  {
+    "id": 28,
+    "title": "ADAM ȘI EVA",
+    "author": "Liviu Rebreanu",
+    "details": "Liviu Rebreanu"
+  },
+  {
+    "id": 29,
+    "title": "LEAGĂNUL RESPIRAȚIEI",
+    "author": "Herta Muller",
+    "details": "Herta Muller"
+  },
+  {
+    "id": 30,
+    "title": "O CIUDĂȚENIE A MINȚII MELE",
+    "author": "Orhan Pamuk",
+    "details": "Orhan Pamuk"
+  },
+  {
+    "id": 31,
+    "title": "AMINTIRI DIN PRIBEGIE",
+    "author": "Neagu Djuvara",
+    "details": "Neagu Djuvara"
+  },
+  {
+    "id": 32,
+    "title": "ZBOR DEASUPRA UNUI CUIB DE CUCI",
+    "author": "Ken Kesey",
+    "details": "Ken Kesey"
+  },
+  {
+    "id": 33,
+    "title": "ZECE NEGRI MITITEI ",
+    "author": "Agatha Christie",
+    "details": "Agatha Christie"
+  },
+  {
+    "id": 34,
+    "title": "SĂ UCIZI O PASĂRE CÎNTĂTOARE",
+    "author": "Harper Lee",
+    "details": "Harper Lee"
+  },
+  {
+    "id": 35,
+    "title": "LIBERTATEA – CURAJUL DE A FI TU ÎNSUȚI",
+    "author": "Osho",
+    "details": "Osho"
+  },
+  {
+    "id": 36,
+    "title": "ARTA DE A AVEA ÎNTOTDEAUNA DREPTATE ",
+    "author": "ARTHUR SCHOPENHAUER",
+    "details": "ARTHUR SCHOPENHAUER"
   }
 ]
