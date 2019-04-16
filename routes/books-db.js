@@ -20,6 +20,7 @@ router.get('/', function (req, res, next) {
     if (err) throw err;
     const sql = "SELECT * FROM books";
     connection.query(sql, function (err, result, fields) {
+      connection.release();
       if (err) throw err;
       console.log(result);
       res.json(result);
@@ -39,7 +40,7 @@ router.post('/create', function (req, res, next) {
     const sql = `INSERT INTO books (id, title, author,details) VALUES (NULL, '${title}', '${author}','${details}')`;
     connection.query(sql, function (err, result) {
       connection.release();
-       if (err) throw err;
+      if (err) throw err;
       console.log(result);
       res.json({ success: true });
     })
@@ -54,6 +55,7 @@ router.post('/delete', function(req, res, next) {
     if (err) throw err;
     const sql = `DELETE FROM books WHERE id=${id}`;
     connection.query(sql, function (err, results) {
+      connection.release();
       if (err) throw err;
       console.log(results);
       res.json({success: true});
@@ -75,6 +77,7 @@ router.post('/update', function(req, res, next) {
     if(err) throw err;
     const sql = `UPDATE books SET title='${title}', author='${author}', details='${details}' WHERE id=${id};`;
     connection.query(sql, function(err, results) {
+      connection.release();
       if(err) throw err;
       console.log(results);
       res.json({success: true});
